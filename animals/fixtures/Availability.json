@@ -1,0 +1,30 @@
+[
+  {
+    "model": "animals.Availability",
+    "pk": 1,
+    "fields": {
+      "availability": "Not Available"
+    }
+  },
+  {
+    "model": "animals.Availability",
+    "pk": 2,
+    "fields": {
+      "availability": "Available"
+    }
+  },
+  {
+    "model": "animals.Availability",
+    "pk": 3,
+    "fields": {
+      "availability": "Pending"
+    }
+  },
+  {
+    "model": "animals.Availability",
+    "pk": 4,
+    "fields": {
+      "availability": "Adopted"
+    }
+  }
+]

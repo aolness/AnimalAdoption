@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Animal Available!</title>
+    <!-- Add your CSS styles here or include a separate CSS file -->
+</head>
+<body>
+    <h1 style="color: #008000;">New Animal Available!</h1>
+    <p><a href='{{animal_detail_url}}'>View Details</a></p>
+    <div class="card">
+        <div class="card-body">
+          <img class="card-img-top" src="{{ animal.image.url }}" alt="">
+          <div class="card-text">
+            <h6> {{ animal.species }}, {{ animal.age }} years</h6>
+            <br>
+            <p> Location: {{ animal.shelter }} </p>
+            <p> Status: {{ animal.availability }} </p>
+            {% if animal.breed %}
+            <p> Breed: {{ animal.breed }} </p>
+            {% endif %}
+            <p> Size: {{ animal.size }} </p>
+            <br>
+          </div>
+        </div>
+      </div>
+    <p style="color: #888; font-size: 14px;">Thank you for using our platform!</p>
+</body>
+</html>

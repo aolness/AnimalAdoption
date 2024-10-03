@@ -1,0 +1,23 @@
+[
+  {
+    "model": "animals.Breed",
+    "pk": 1,
+    "fields": {
+      "name": "German Shepherd"
+    }
+  },
+  {
+    "model": "animals.Breed",
+    "pk": 2,
+    "fields": {
+      "name": "Golden Retriever"
+    }
+  },
+  {
+    "model": "animals.Breed",
+    "pk": 3,
+    "fields": {
+      "name": "Corgi"
+    }
+  }
+]

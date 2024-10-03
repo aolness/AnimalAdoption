@@ -1,0 +1,49 @@
+{% extends "news/components/base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <h1> Paw-fect  </h1>
+        </div>
+        <div class="col">
+            <h3> Newest arrivals! </h3>
+            {% for animal in animals %}
+            <h4>{{animal.name}}</h4>
+            <a href="{{ animal.get_absolute_url }}" class="btn btn-primary">Learn more</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div id="front_middle" class="container">
+    <br>
+    <h2> Sign up today! </h2>
+    <div class="row align-items-center">
+        <div class="col">
+            <p>One</p>
+        </div>
+        <div class="col">
+            <p>Two</p>
+        </div>
+        <div class="col">
+            <p>Three</p>
+        </div>
+    <br>
+</div>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <h1> The latest  </h1>
+        </div>
+        <div class="col">
+            {% for post in news %}
+            <h4>{{post.title}}</h4>
+            <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Learn more</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

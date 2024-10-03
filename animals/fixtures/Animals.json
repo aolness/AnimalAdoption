@@ -1,0 +1,39 @@
+[
+  {
+    "model": "animals.Animal",
+    "pk": 1,
+    "fields": {
+      "date_entered": "2023-01-01T23:00:50Z",
+      "name": "Catso",
+      "species": 2,
+      "age": 4,
+      "breed": 1,
+      "shelter": 1,
+      "views": 1,
+      "availability": 1,
+      "disposition": [
+        1
+      ],
+      "size": 1
+    }
+  },
+
+  {
+    "model": "animals.Animal",
+    "pk": 2, 
+    "fields": {
+      "date_entered": "2023-01-01T11:32:54Z",
+      "name": "Doggo",
+      "species": 1,
+      "age": 2,
+      "breed": 1,
+      "shelter": 2,
+      "views": 10,
+      "availability": 1,
+      "disposition": [
+        1
+      ],
+      "size": 2
+    }
+  }
+]

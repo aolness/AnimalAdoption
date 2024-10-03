@@ -1,0 +1,45 @@
+{% extends "news/components/base.html" %}
+{% block content %}
+<h1>Latest News</h1>
+
+{% if user.is_authenticated and user.profile.shelter %}
+<a class="btn btn-success" href="{% url 'news-create' %}" role="button">New Post</a>
+{% endif %}
+
+{% for object in object_list %}
+<div class="col-sm-4">
+    <div class="card mt-4">
+        <h4 class="card-title">{{ object.title }}</h4>
+        <h5 class="card-title">By: {{object.author}}</h5>
+        <h6 class="card-title">{{ object.date_created}}</h6> 
+        <div class="card-body">
+            <a href="{{ object.get_absolute_url }}" class="btn btn-primary">View Details</a>
+            {% if object.animal %}
+                <img src="{{ object.animal.image.url }}" alt="animal" class="img-thumbnail">
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% if is_paginated %}
+{% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a class="btn btn-info mb-4" href="?page={{ num}}">{{ num }}</a>
+
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a class="btn btn-outline-info mb-4" href="?page={{ num}}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+{% endif %}
+{% endblock %}

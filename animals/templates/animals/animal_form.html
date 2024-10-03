@@ -1,0 +1,23 @@
+{% extends "news/components/base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="content-section">
+  <form method="POST" enctype="multipart/form-data" class="mb-3">
+      {% csrf_token %}
+      <fieldset class="form-group">
+          <legend class="border-bottom mb-4">{{ title }}</legend>
+          {{ form|crispy }}
+      </fieldset>
+      <div class="form-group">
+          <button class="btn btn-outline-success" type="submit">Submit</button>
+          {% if object.id %}
+          <a class="btn btn-outline-secondary" href="{% url 'animals-detail' object.id %}">Cancel</a>
+          {% else %}
+          <a class="btn btn-outline-secondary" href="{% url 'animals-list' %}">Cancel</a>
+          {% endif %}
+      </div>
+  </form>
+</div>
+{% endblock content %}

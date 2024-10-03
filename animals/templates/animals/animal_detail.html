@@ -1,0 +1,39 @@
+{% extends "news/components/base.html" %}
+{% block content %}
+
+{% if animal %}
+<h1> Details for {{ animal.name }} </h1>
+{% for disposition in animal.disposition.all %}
+<span class="badge bg-info text-dark">  {{ disposition }}  </span>
+{% endfor %} 
+<br>
+<div class="card">
+  <div class="card-body">
+    <img class="card-img-top" src="{{ animal.image.url }}" alt="">
+    <div class="card-text">
+      <h6> {{ animal.species }}, {{ animal.age }} years</h6>
+      <br>
+      <p> Location: {{ animal.shelter }} </p>
+      <p> Status: {{ animal.availability }} </p>
+      {% if animal.breed %}
+      <p> Breed: {{ animal.breed }} </p>
+      {% endif %}
+      <p> Size: {{ animal.size }} </p>
+      <br>
+      <p> This animal has been viewed {{ animal.views }} times!</p>
+    </div>
+    <div class="">
+      {% if user.profile.shelter == object.shelter %}
+      <a class="btn btn-warning mt-2 mb-2" href="{% url 'animal-update' object.id %}" role="button">Edit Animal</a>
+       <a class="btn btn-danger mt-2 mb-2" href="{% url 'animal-delete' object.id %}" role="button">Delete Animal</a>
+      {% endif %}
+    </div>
+    <a class="btn btn-primary" href="{% url 'animals-list' %}">View All</a>
+  </div>
+</div>
+
+{% else %}
+ <h2> No animal with that ID was found </h2>
+{% endif %} 
+
+{% endblock content %}

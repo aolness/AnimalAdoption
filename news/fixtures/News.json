@@ -1,0 +1,35 @@
+[
+    {
+        "model": "news.News",
+        "pk": 2,
+        "fields": {
+            "title": "Grand Opening",
+            "body": "We are opening tomorrow",
+            "date_created": "2023-07-14T23:00:50Z",
+            "author": null,
+            "animal": null
+        }
+    },
+    {
+        "model": "news.News",
+        "pk": 1,
+        "fields": {
+            "title": "New Pet Available",
+            "body": "We have a new Iguana, Iggy Azalea, available now",
+            "date_created": "2023-07-14T23:00:50Z",
+            "author": null,
+            "animal": null
+        }
+    },
+    {
+        "model": "news.News",
+        "pk": 3,
+        "fields": {
+            "title": "Grand Closing",
+            "body": "We have adopted out all of our animals!",
+            "date_created": "2023-07-14T23:00:50Z",
+            "author": null,
+            "animal": null
+        }
+    }
+]

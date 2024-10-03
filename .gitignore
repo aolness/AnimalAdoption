@@ -1,0 +1,5 @@
+db.sqlite3
+.env
+.idea
+media/animal_pics
+__pycache__

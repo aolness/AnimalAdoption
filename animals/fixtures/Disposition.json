@@ -1,0 +1,23 @@
+[
+  {
+    "model": "animals.Disposition",
+    "pk": 1,
+    "fields": {
+      "disposition": "Good with children"
+    }
+  },
+  {
+    "model": "animals.Disposition",
+    "pk": 2,
+    "fields": {
+      "disposition": "Good with other animals"
+    }
+  },
+  {
+    "model": "animals.Disposition",
+    "pk": 3,
+    "fields": {
+      "disposition": "Animal must be leashed at all times"
+    }
+  }
+]

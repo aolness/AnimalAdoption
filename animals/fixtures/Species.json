@@ -1,0 +1,23 @@
+[
+  {
+    "model": "animals.Species",
+    "pk": 1,
+    "fields": {
+      "name": "Dog"
+    }
+  },
+  {
+    "model": "animals.Species",
+    "pk": 2,
+    "fields": {
+      "name": "Cat"
+    }
+  },
+  {
+    "model": "animals.Species",
+    "pk": 3,
+    "fields": {
+      "name": "Iguana"
+    }
+  }
+]

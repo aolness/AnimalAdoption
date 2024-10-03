@@ -1,0 +1,25 @@
+{% extends "news/components/base.html" %}
+
+{% block content %}
+<div>
+    <div>
+        <h1>{{object.title}}</h1>
+        {% if object.author == user %}  
+            <a class='btn btn-secondary' href="{% url 'news-update' object.id %}">Update</a>
+            <a class='btn btn-danger' href="{% url 'news-delete' object.id %}">Delete</a> 
+        {% endif %}    
+    </div>
+    <h4>{{object.author}}</h4>
+    <h6>{{ object.date_created}}</h6>
+    <p>{{ object.body }}</p>
+    {% if object.animal %}
+        <img src="{{ object.animal.image.url }}" alt="animal" class="img-fluid">
+        <div>
+            <a href="{% url 'animals-detail' object.animal.id %}" class="btn btn-primary">
+                Check the animal out!
+            </a>
+        </div>
+    {% endif %}
+    <a class="btn btn-primary" href="{% url 'news-list' %}">View All</a>
+</div>
+{% endblock content %}
